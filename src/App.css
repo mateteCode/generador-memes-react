@@ -1,0 +1,187 @@
+/* Normalización de estilos (Reset) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* Paleta de colores */
+  --color-primary-solid: #ff3333;
+  --color-primary-900: rgba(255, 51, 51, 0.9);
+  --color-primary-500: rgba(255, 51, 51, 0.5);
+  --color-primary-300: rgba(255, 51, 51, 0.3);
+
+  --color-secundary-solid: #1d84b5;
+  --color-secundary-900: rgba(29, 132, 181, 0.9);
+  --color-secundary-500: rgba(29, 132, 181, 0.5);
+  --color-secundary-300: rgba(29, 132, 181, 0.3);
+
+  --color-dark-solid: #1f1f1f;
+  --color-dark-900: rgba(31, 31, 31, 0.9);
+  --color-dark-500: rgba(31, 31, 31, 0.5);
+  --color-dark-300: rgba(31, 31, 31, 0.3);
+
+  --color-dark-bg-solid: #30343f;
+  --color-light-bg-solid: #fafaff;
+
+  --color-light-solid: #fff;
+
+  /* Tipografía */
+  --font-base: "Inter", sans-serif;
+  --font-alternative: "Ruleway", sans-serif;
+  --font-display: 4.6em;
+  --font-jumbo: 3.8em;
+  --font-xlarge: 3em;
+  --font-large: 2.4em;
+  --font-medium: 1.8em;
+  --font-small: 1.6em;
+  --font-xsmall: 1.4em;
+
+  /* Espaciado */
+  --spacing-128: 12.8rem;
+  --spacing-68: 6.8rem;
+  --spacing-36: 3.6rem;
+  --spacing-28: 2.8rem;
+  --spacing-24: 2.4rem;
+  --spacing-20: 2rem;
+  --spacing-16: 1.6rem;
+  --spacing-12: 1.2rem;
+  --spacing-8: 0.8rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-base);
+  font-size: 62.5%;
+  color: var(--color-dark-solid);
+  /* background-color: var(--color-dark-bg-solid); */
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-family: var(--font-alternative);
+  font-size: 48px;
+  color: black;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+p {
+  font-size: 1.8em;
+}
+
+img {
+  width: 100%;
+}
+
+/* Clases utilitarias*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos de la página */
+h1 {
+  width: fit-content;
+  margin: 0 auto;
+  font-family: var(--font-alternative);
+}
+.panel {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 90vh;
+  justify-content: start;
+  align-items: start;
+}
+.controls {
+  /*background-color: aquamarine;*/
+  width: 500px;
+  height: auto;
+  border: 3px rgb(255, 0, 0) solid;
+  border-radius: 20px;
+}
+.controls__group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+}
+
+.controls__label {
+  width: 150px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.controls__upload {
+  display: flex;
+}
+
+.controls__upload-btn,
+.controls__button {
+  background-color: red;
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.meme {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.meme__figure {
+  max-height: 100%;
+  max-width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  min-height: 100%;
+  mix-blend-mode: darken;
+}
+
+.meme__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.meme__line {
+  position: absolute;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.controls__position-btn {
+  background-color: red;
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
