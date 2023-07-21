@@ -3,25 +3,8 @@
 
 :root {
   /* Paleta de colores */
-  --color-primary-solid: #ff3333;
-  --color-primary-900: rgba(255, 51, 51, 0.9);
-  --color-primary-500: rgba(255, 51, 51, 0.5);
-  --color-primary-300: rgba(255, 51, 51, 0.3);
-
-  --color-secundary-solid: #1d84b5;
-  --color-secundary-900: rgba(29, 132, 181, 0.9);
-  --color-secundary-500: rgba(29, 132, 181, 0.5);
-  --color-secundary-300: rgba(29, 132, 181, 0.3);
-
-  --color-dark-solid: #1f1f1f;
-  --color-dark-900: rgba(31, 31, 31, 0.9);
-  --color-dark-500: rgba(31, 31, 31, 0.5);
-  --color-dark-300: rgba(31, 31, 31, 0.3);
-
-  --color-dark-bg-solid: #30343f;
-  --color-light-bg-solid: #fafaff;
-
-  --color-light-solid: #fff;
+  --color-bg: #b7544c;
+  --color-bg-hover: #b21322;
 
   /* Tipografía */
   --font-base: "Inter", sans-serif;
@@ -58,7 +41,6 @@ html {
   font-family: var(--font-base);
   font-size: 62.5%;
   color: var(--color-dark-solid);
-  /* background-color: var(--color-dark-bg-solid); */
 }
 
 a {
@@ -102,21 +84,51 @@ h1 {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  width: 100%;
+  /* width: 100%; */
   max-width: 1440px;
   margin: 0 auto;
-  height: 90vh;
-  justify-content: start;
+  height: 92vh;
+  justify-content: stretch;
   align-items: start;
+  padding: 10px;
+  /* align-content: center; */
 }
 .controls {
   /*background-color: aquamarine;*/
   width: 500px;
   height: auto;
-  border: 3px rgb(255, 0, 0) solid;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
 }
-.controls__group {
+
+.controls__block {
+  border: 3px var(--color-bg) solid;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding-top: 6px;
+  position: relative;
+}
+
+.controls__title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-bg);
+  background-color: white;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 2px 8px;
+  text-transform: uppercase;
+}
+.controls__group,
+.file-input,
+.color-input,
+.select,
+.number-input,
+.text-input {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -124,19 +136,20 @@ h1 {
   margin: 10px;
 }
 
-.controls__label {
+.controls__label,
+.file-input__label,
+.color-input__label,
+.select__label,
+.number-input__label,
+.text-input__label {
   width: 150px;
   font-size: 12px;
   font-weight: 800;
 }
 
-.controls__upload {
-  display: flex;
-}
-
-.controls__upload-btn,
-.controls__button {
-  background-color: red;
+.controls__button,
+.file-input__button {
+  background-color: var(--color-bg);
   font-size: 1.2em;
   color: white;
   border: none;
@@ -145,12 +158,27 @@ h1 {
   cursor: pointer;
 }
 
+.controls__button:hover,
+.file-input__button:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.number-input__input {
+  width: 50px;
+}
+
+.controls__button-download {
+  margin: 0 auto;
+}
+
 .meme {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 10px;
   position: relative;
 }
 
@@ -177,11 +205,73 @@ h1 {
 }
 
 .controls__position-btn {
-  background-color: red;
+  background-color: var(--color-bg);
   font-size: 1.2em;
   color: white;
   border: none;
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.controls__position-btn:hover {
+  background-color: var(--color-bg-hover);
+}
+
+/* Limpieza de estilos */
+
+.transparent-checkbox {
+  display: flex;
+  gap: 8px;
+}
+
+.transparent-checkbox__label {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.transparent-checkbox__input[type="checkbox"] {
+  accent-color: var(--color-bg);
+}
+
+.inline-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .panel {
+    flex-direction: column;
+  }
+  .controls {
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .controls__button-download {
+    position: absolute;
+    top: 135px;
+    left: 14px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .panel {
+    align-items: center;
+  }
+  .controls {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .controls__button-download {
+    position: initial;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 }
